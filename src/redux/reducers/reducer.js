@@ -1,5 +1,6 @@
 const initialState = {
-	animals: []
+	animals: [],
+  favoritosCargados: JSON.parse(localStorage.getItem('dog')) || []
 }
 
 const module = (state=initialState, {type,payload}) => {
@@ -8,6 +9,12 @@ const module = (state=initialState, {type,payload}) => {
       return{
         ...state,
         animals: payload
+      }
+    case 'setFavoritos':
+      const array = [...state.favoritosCargados, payload]
+      return{
+        ...state,
+        favoritosCargados: array
       }
     default:
       return state 

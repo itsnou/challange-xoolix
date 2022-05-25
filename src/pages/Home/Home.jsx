@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import {StyledDiv} from './styled'
 import Search from '../../components/Search/Search';
 import Card from '../../components/Card/Card';
+import { setFavoritos } from '../../redux/actions/actions';
 
 const Home = () => {
   const dogs = useSelector(state => state.animals);
@@ -19,6 +20,9 @@ const Home = () => {
     const arr = [...favLS, dog];
     setFavLS(arr);
     localStorage.setItem('dog', JSON.stringify(arr));
+    setFavoritos(arr)
+    window.dispatchEvent(new Event("storage"));
+
   }
 
   function recargarLS(dog) {
@@ -26,6 +30,9 @@ const Home = () => {
     arrayFav.splice(arrayFav.indexOf(dog), 1)
     setFavLS(arrayFav)
     localStorage.setItem('dog', JSON.stringify(arrayFav))
+    setFavoritos(arrayFav)
+    window.dispatchEvent(new Event("storage"));
+
   }
   
   return (

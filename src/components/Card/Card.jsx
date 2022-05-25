@@ -27,9 +27,9 @@ const Card = ({dog, cargarFavorito, recargarLS}) => {
       <img src={dog} alt={dog}/>
       {
         favorite ? 
-          <img onClick={(dog) => handleClick(dog)} className="favorite" src={Fav} alt="favorite" />
+          <img onClick={() => handleClick(dog)} className="favorite" src={Fav} alt="favorite" />
         :
-          <img onClick={(dog) => handleClick(dog)} className="favorite" src={NotFav} alt="not favorite" />
+          <img onClick={() => handleClick(dog)} className="favorite" src={NotFav} alt="not favorite" />
       }
     </StyledDiv>
   );
