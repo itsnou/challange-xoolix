@@ -11,8 +11,8 @@ export const StyledDiv = styled.div`
   .favorite{
     position:relative;
     width: 10%;
-    height: 20%;
-    right:50px;
+    height: 15%;
+    right:60px;
     bottom:10px;
   }
 `
